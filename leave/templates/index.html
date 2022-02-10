@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave</title>
+  </head>
+  <body>
+    <form method="POST" action="/requestleave">
+      {% csrf_token %}
+      <div>
+        <br />
+        <div>
+          <label>Request Leave</label>
+          <hr />
+          <div><h3>Enter Details</h3></div>
+        </div>
+
+        <div>
+          <label>Name:</label>
+          <div>{{ form.name }}</div>
+        </div>
+        <br />
+        <div>
+          <label>Start Date:</label>
+          <div>{{ form.start_date }}</div>
+        </div>
+        <br />
+        <div>
+          <label>End Date:</label>
+          <div>{{ form.end_date }}</div>
+        </div>
+        <br />
+        <div>
+          <label>Leave Type:</label>
+          <div>{{ form.leave_type }}</div>
+        </div>
+        <br />
+        <div>
+          <label></label>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+          <br />
+          <div>
+            <a href="/">Show Leaves</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

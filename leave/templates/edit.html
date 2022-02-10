@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Leave</title>
+  </head>
+  <body>
+    <form method="POST" action="/update/{{leave.id}}">
+      {% csrf_token %}
+      <div>
+        <br />
+        <div>
+          <label>Request Leave</label>
+          <hr />
+          <div><h3>Update Details</h3></div>
+        </div>
+
+        <div>
+          <label>Name:</label>
+          <input type="text" name="name" id="id_name" value="{{leave.name}}" />
+        </div>
+        <br />
+        <div>
+          <label>Start Date:</label>
+          <input
+            type="date"
+            name="start_date"
+            id="id_start_date"
+            value="{{leave.start_date|date:'Y-m-d'}}"
+          />
+        </div>
+        <br />
+        <div>
+          <label>End Date:</label>
+          <input
+            type="date"
+            name="end_date"
+            placeholder="2022-01-03"
+            id="id_end_date"
+            value="{{leave.end_date|date:'Y-m-d'}}"
+          />
+        </div>
+        <br />
+        <div>
+          <label>Leave Type:</label>
+          <input
+            type="text"
+            name="leave_type"
+            id="id_leave_type"
+            value="{{leave.leave_type}}"
+          />
+        </div>
+        <br />
+        <div>
+          <label></label>
+          <div>
+            <button type="submit">Update</button>
+          </div>
+          <br />
+          <div>
+            <button type="submit">
+              <a href="/">Back</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{employee.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Id:</label>
+    <div class="col-sm-4">
+        <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ employee.eid }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{ employee.ename }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Email:</label>
+    <div class="col-sm-4">
+        <input type="email" name="eemail" id="id_eemail" required maxlength="254" value="{{ employee.eemail }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Contact:</label>
+    <div class="col-sm-4">
+        <input type="text" name="econtact" id="id_econtact" required maxlength="15" value="{{ employee.econtact }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html> -->
